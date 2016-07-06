@@ -1,0 +1,261 @@
+body{
+    font-family:Georgia,Serif;
+    background-color: #0d223e;
+    font-weight: 400;
+    font-size: 15px;
+    color: #333;
+    overflow: hidden;
+    -webkit-font-smoothing:antialiased;//文字圆滑抗锯齿，多用于英文字体
+}
+.wrap{
+    height:200px;
+    width:100%;
+    background:black;
+    position:relative;
+}
+.moon{
+    position:absolute;
+    left:50%;
+    top:50%;
+    height:150px;
+    width:150px;
+    background: #fffbb5;
+    border-radius:50%;
+    transform:translate3d(-50%, -50%, 0);
+    box-shadow:6px 6px 10px rgba(102,102,102,0.6),
+    6px -6px 10px rgba(102,102,102,0.6),
+    -6px 6px 10px rgba(102,102,102,0.6),
+    -6px -6px 10px rgba(102,102,102,0.6);
+
+}
+.moon::after{
+    content:"";
+    height:150px;
+    width:150px;
+    border-radius:50%;
+    background:black;
+    position:absolute;
+    left:-120%;
+    top:0%;
+    animation:linerA ease-out 50s infinite;
+    -webkit-animation:linerA ease-out 50s infinite;
+}
+@keyframes linerA{
+    0%{
+        left:-120%;
+        top:0%;
+    }
+    35%{
+        left:0%;
+        top:0%;
+    }
+    50%{
+        left:0%;
+        top:0%;
+    }
+    65%{
+        left:0%;
+        top:0%;
+    }
+    100%{
+        left:200%;
+        top:0%;
+    }
+}
+@-webkit-keyframes linerA{
+    0%{
+        left:-120%;
+        top:0%;
+    }
+    35%{
+        left:0%;
+        top:0%;
+    }
+    50%{
+        left:0%;
+        top:0%;
+    }
+    65%{
+        left:0%;
+        top:0%;
+    }
+    100%{
+        left:200%;
+        top:0%;
+    }
+}
+a{
+    text-decoration: none;
+    color:#555;
+}
+.clr{
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    clear: both;
+    padding:0;
+    margin: 0;
+}
+.st-container{
+width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: "Josefin","Myriad Pro",Arial,sans-serif;
+}
+.st-container > input,
+.st-container > a{
+    width:20%;
+    height: 34px;
+    line-height: 34px;
+    position: fixed;
+    bottom: 0;
+}
+/*隐藏元素的方法（功能需要）*/
+.st-container > input{
+    /*display: none;/*隐藏不占位，元素没有了*/
+    /* position: absolute;left: -99999px;隐藏不占位，元素没有了*/
+    /*visibility: hidden;隐藏占位，元素只是看不到，作用还在*/
+    opacity: 0;/*隐藏占位，元素只是看不到，作用还在*/
+    z-index: 1000;/*设置元素的堆叠顺序,数越大优先级越高*/
+}
+.st-container > a{
+    z-index: 10;
+    font-weight: 700;
+    font-size: 16px;
+    background-color: #3a3a3a;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(192, 35, 29, 0.2);
+}
+#st-control-1,#st-control-1+a{
+    left: 0%;
+}
+#st-control-2,#st-control-2+a{
+    left: 20%;
+}
+#st-control-3,#st-control-3+a{
+    left: 40%;
+}
+#st-control-4,#st-control-4+a{
+    left: 60%;
+}
+#st-control-5,#st-control-5+a{
+    left: 80%;
+}
+.st-container input:checked +a,
+.st-container input:checked:hover +a {
+    background-color: #000000;
+}
+.st-container input:checked + a:after{
+    content: "";
+    width: 0;
+    height:0;
+    overflow: hidden;
+    border: 10px solid transparent;/* 设置三角形*/
+    border-bottom-color: #000000;
+    position: absolute;/* 定位*/
+    bottom:100%;
+    left:50%;
+    margin-left: -10px;/* 居中*/
+}
+.st-container input:hover +a{
+    background-color: #0d223e;
+}
+
+.st-scroll,
+.st-panel{
+    width: 100%;
+    height:100%;
+    position: relative;
+}
+.st-scroll{
+    left:0;
+    top: 0;
+    transform:translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform:translate3d(0,0,0);
+    -o-transform:translate3d(0,0,0);
+    -ms-transform:translate3d(0,0,0);
+    -webkit-backface-visibility:hidden;//不在当前页面隐藏*/
+-webkit-transition: all 0.6s ease-in-out ;
+    -moz-transition: all 0.6s ease-in-out ;
+    -ms-transition:all 0.6s ease-in-out ;
+    -o-transition:all 0.6s ease-in-out ;
+    transition: all 0.6s ease-in-out ;
+}
+.st-panel{
+    background-color: #fff;
+    overflow: hidden;
+}
+#st-control-1:checked~.st-scroll{
+    transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+    -o-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+}
+#st-control-2:checked~.st-scroll{
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+}
+#st-control-3:checked~.st-scroll{
+    transform: translateY(-200%);
+    -webkit-transform: translateY(-200%);
+    -o-transform: translateY(-200%);
+    -moz-transform: translateY(-200%);
+    -ms-transform: translateY(-200%);
+}
+#st-control-4:checked~.st-scroll{
+    transform: translateY(-300%);
+    -webkit-transform: translateY(-300%);
+    -o-transform: translateY(-300%);
+    -moz-transform: translateY(-300%);
+    -ms-transform: translateY(-300%);
+}
+#st-control-5:checked~.st-scroll{
+    transform: translateY(-400%);
+    -webkit-transform: translateY(-400%);
+    -o-transform: translateY(-400%);
+    -moz-transform: translateY(-400%);
+    -ms-transform: translateY(-400%);
+}
+.st-desc{
+    width:200px;
+    height:200px;
+    background-color: #0d223e;
+    position: absolute;
+    left:50%;
+    top:0;
+    margin-left: -100px;
+    transform: translateY(-50%) rotate(45deg);
+    -webkit-transform: translateY(-50%) rotate(45deg);
+    -o-transform: translateY(-50%) rotate(45deg);
+    -moz-transform: translateY(-50%) rotate(45deg);
+    -ms-transform: translateY(-50%) rotate(45deg);
+
+}
+[data-icon]:after{
+    content: attr(data-icon);
+    width:200px;
+    height:200px;
+    color: black;
+    font-size: 40px;
+    text-align: center;
+    line-height: 200px;
+    position: absolute;
+    left:50%;
+    top:50%;
+    margin: -100px 0 0 -100px;
+    transform:translateY(25%)  rotate(-45deg);
+    -webkit-transform:translateY(25%)   rotate(-45deg);
+    -o-transform:translateY(25%)  rotate(-45deg);
+    -moz-transform:translateY(25%)  rotate(-45deg);
+    -ms-transform:translateY(25%)   rotate(-45deg);
+
+}
+
