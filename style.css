@@ -1,17 +1,18 @@
 body{
     font-family:Georgia,Serif;
-    background-color: #0d223e;
     font-weight: 400;
     font-size: 15px;
     color: #333;
     overflow: hidden;
-    -webkit-font-smoothing:antialiased;//文字圆滑抗锯齿，多用于英文字体
+    -webkit-font-smoothing:antialiased;/*文字圆滑抗锯齿，多用于英文字体*/
 }
 .wrap{
     height:200px;
     width:100%;
-    background:black;
+    background-color: black;
+    margin: 0 auto;
     position:relative;
+    box-shadow:10px 0 4px #3a3a3a;
 }
 .moon{
     position:absolute;
@@ -19,9 +20,11 @@ body{
     top:50%;
     height:150px;
     width:150px;
-    background: #fffbb5;
+    /*background: url("./img/Passport3.png") top center no-repeat;*/
+    background-color: #f7ff87;
     border-radius:50%;
-    transform:translate3d(-50%, -50%, 0);
+    -moz-border-radius: 50%;
+    transform:translate3d(-50%, -50%, 0);/*定位*/
     box-shadow:6px 6px 10px rgba(102,102,102,0.6),
     6px -6px 10px rgba(102,102,102,0.6),
     -6px 6px 10px rgba(102,102,102,0.6),
@@ -33,16 +36,17 @@ body{
     height:150px;
     width:150px;
     border-radius:50%;
-    background:black;
+    background: black;
     position:absolute;
-    left:-120%;
-    top:0%;
-    animation:linerA ease-out 50s infinite;
-    -webkit-animation:linerA ease-out 50s infinite;
+    left:-100%;
+    top:0;
+    overflow: hidden;
+    animation:linerA  ease-out 8s infinite;
+    -webkit-animation:linerA  ease-out 8s infinite;
 }
 @keyframes linerA{
     0%{
-        left:-120%;
+        left:-100%;
         top:0%;
     }
     35%{
@@ -58,7 +62,7 @@ body{
         top:0%;
     }
     100%{
-        left:200%;
+        left:100%;
         top:0%;
     }
 }
@@ -97,12 +101,13 @@ a{
     margin: 0;
 }
 .st-container{
-width: 100%;
+    width: 100%;
     height: 100%;
     position: absolute;
     left: 0;
     top: 0;
     font-family: "Josefin","Myriad Pro",Arial,sans-serif;
+
 }
 .st-container > input,
 .st-container > a{
@@ -146,7 +151,7 @@ width: 100%;
 }
 .st-container input:checked +a,
 .st-container input:checked:hover +a {
-    background-color: #000000;
+    background-color: #0d223e;
 }
 .st-container input:checked + a:after{
     content: "";
@@ -154,14 +159,14 @@ width: 100%;
     height:0;
     overflow: hidden;
     border: 10px solid transparent;/* 设置三角形*/
-    border-bottom-color: #000000;
+    border-bottom-color:#0d223e;
     position: absolute;/* 定位*/
     bottom:100%;
     left:50%;
     margin-left: -10px;/* 居中*/
 }
 .st-container input:hover +a{
-    background-color: #0d223e;
+    background-color:rgba(13, 34, 62, 0.4) ;
 }
 
 .st-scroll,
@@ -186,8 +191,10 @@ width: 100%;
     transition: all 0.6s ease-in-out ;
 }
 .st-panel{
-    background-color: #fff;
     overflow: hidden;
+    background-image: url("./img/bg.png") ;
+    -moz-background-size:100% 100%;
+    background-size:100% 100%;
 }
 #st-control-1:checked~.st-scroll{
     transform: translateY(0%);
@@ -227,17 +234,16 @@ width: 100%;
 .st-desc{
     width:200px;
     height:200px;
-    background-color: #0d223e;
+    background-color:rgba(13, 34, 62, 0.4);
     position: absolute;
     left:50%;
     top:0;
     margin-left: -100px;
-    transform: translateY(-50%) rotate(45deg);
-    -webkit-transform: translateY(-50%) rotate(45deg);
-    -o-transform: translateY(-50%) rotate(45deg);
-    -moz-transform: translateY(-50%) rotate(45deg);
-    -ms-transform: translateY(-50%) rotate(45deg);
-
+    transform: translateY(-60%) rotate(45deg);
+    -webkit-transform: translateY(-60%) rotate(45deg);
+    -o-transform: translateY(-60%) rotate(45deg);
+    -moz-transform: translateY(-60%) rotate(45deg);
+    -ms-transform: translateY(-60%) rotate(45deg);
 }
 [data-icon]:after{
     content: attr(data-icon);
@@ -245,10 +251,12 @@ width: 100%;
     height:200px;
     color: black;
     font-size: 40px;
+    font-family:"Raphaelicons";
+    text-shadow: 0 0 4px rgba(192, 35, 29, 0.2);
     text-align: center;
     line-height: 200px;
     position: absolute;
-    left:50%;
+    left:75%;
     top:50%;
     margin: -100px 0 0 -100px;
     transform:translateY(25%)  rotate(-45deg);
@@ -258,4 +266,175 @@ width: 100%;
     -ms-transform:translateY(25%)   rotate(-45deg);
 
 }
+/*导入字体*/
+@font-face {
+    font-family:"Raphaelicons";
+    src:url('fonts/raphaelicons-webfont.eot')    formart('eot') ,
+    url('fonts/raphaelicons-webfont.woff')   formart('woff'),
+    url('fonts/raphaelicons-webfont.ttf')    formart('truetype'),
+    url('fonts/raphaelicons-webfont.svg')    formart('svg');
+[font-weight:normol];
+[font-style:normol]
+}
+.st-color{
+    background-color: white;}
+/*firstpage*/
+.information{
+    margin:100px 100px;
+    text-align: center;
+    text-shadow: 2px 2px 2px rgba(70, 125, 128, 0.8);
+}
+.information hr{
+    height: 0;
+    border: 1px solid #3a3a3a;
+    border-radius: 5px;
+}
+.information p{
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+}
+/*basicInfo*/
+.basicInfo{
+    margin: 200px auto;
+    width: 100%;
+    font-family: 'Dosis', sans-serif;
+    padding: 10px;
+}
+.basicInfo .basicInfo-list{
+    width:50%;
+    height: 50%;
+    position: relative;
+    float:left;
+    color: black;
+}
+#basicInfo-1{
+    border-right: 5px solid black;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    padding-left:300px;
+}
+.title{
+    font-family: 'Dosis', sans-serif;
+    font-size:40px ;
+    line-height: 40px;
+    font-weight: bold;
+}
+#basicInfo-2{
+    border-left: 5px solid black;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-left: 40px;
+}
+/* skills*/
+.ca-menu{
+    padding:0;
+    margin:200px 100px;
+    width: 100%;
+    font-family: 'Dosis', sans-serif;
+}
+.ca-menu li{
+    width: 230px;
+    height: 230px;
+    border: 10px solid #f6f6f6;
+    overflow: hidden;
+    position: relative;
+    float:left;
+    background: #fff;
+    margin-right: 20px;
+    -webkit-box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+    -moz-box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-transition: all 400ms linear;
+    -moz-transition: all 400ms linear;
+    -o-transition: all 400ms linear;
+    -ms-transition: all 400ms linear;
+    transition: all 400ms linear;
+}
+.ca-menu li:last-child{
+    margin-right: 0px;
+}
+.ca-icon{
+    font-family: 'Raphaelicons';
+    font-size: 40px;
+    color: #000000;;
+    line-height: 40px;
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    left: 0px;
+    top: 5px;
+    text-align: center;
+    -webkit-transition: all 400ms linear;
+    -moz-transition: all 400ms linear;
+    -o-transition: all 400ms linear;
+    -ms-transition: all 400ms linear;
+    transition: all 400ms linear;
+}
+.ca-main{
+    font-size: 20px;
+    text-align: center;
+    height: 80px;
+    width: 170px;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin-left: -85px;
+    opacity: 0.8;
 
+}
+.ca-sub{
+    text-align:center;
+    color: #000;
+    font-size: 20px;
+    height: 80px;
+    width: 170px;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    margin-left: -80px;
+    opacity: 0;
+    -webkit-transition: all 400ms linear;
+    -moz-transition: all 400ms linear;
+    -o-transition: all 400ms linear;
+    -ms-transition: all 400ms linear;
+    transition: all 400ms linear;
+}
+.ca-menu li:hover{
+    background: #f7f7f7;
+    border-color: #fff;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+    box-shadow: 0 45px 60px -50px #000000;
+}
+.ca-menu li:hover .ca-icon{
+    display: none;
+}
+.ca-menu li:hover .ca-main{
+    display: none;
+}
+.ca-menu li:hover .ca-sub{
+    opacity: 0.8;
+}
+.content{
+    margin:200px 100px;
+    text-align: center;
+    text-shadow: 2px 2px 2px rgba(70, 125, 128, 0.8);
+}
+.content hr{
+    height: 0;
+    width: 50%;
+    border: 1px solid #3a3a3a;
+    border-radius: 5px;
+}
+.content p{
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+}
