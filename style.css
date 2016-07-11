@@ -1,5 +1,4 @@
 body{
-    font-family:Georgia,Serif;
     font-weight: 400;
     font-size: 15px;
     color: #333;
@@ -251,7 +250,9 @@ a{
     height:200px;
     color: black;
     font-size: 40px;
-    font-family:"Raphaelicons";
+    font-family: KaiTi,STXihei,
+    "Microsoft YaHei",
+    serif;
     text-shadow: 0 0 4px rgba(192, 35, 29, 0.2);
     text-align: center;
     line-height: 200px;
@@ -266,7 +267,7 @@ a{
     -ms-transform:translateY(25%)   rotate(-45deg);
 
 }
-/*导入字体*/
+/*导入字体
 @font-face {
     font-family:"Raphaelicons";
     src:url('fonts/raphaelicons-webfont.eot')    formart('eot') ,
@@ -275,7 +276,7 @@ a{
     url('fonts/raphaelicons-webfont.svg')    formart('svg');
 [font-weight:normol];
 [font-style:normol]
-}
+}*/
 .st-color{
     background-color: white;}
 /*firstpage*/
@@ -358,7 +359,9 @@ a{
     margin-right: 0px;
 }
 .ca-icon{
-    font-family: 'Raphaelicons';
+    font-family: STXihei,
+    "Microsoft YaHei",
+    serif;
     font-size: 40px;
     color: #000000;;
     line-height: 40px;
@@ -426,6 +429,9 @@ a{
     margin:200px 100px;
     text-align: center;
     text-shadow: 2px 2px 2px rgba(70, 125, 128, 0.8);
+    font-family: KaiTi,STXihei,
+    "Microsoft YaHei",
+    serif;
 }
 .content hr{
     height: 0;
