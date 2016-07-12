@@ -347,7 +347,7 @@ a{
 }
 .ca-menu{
     padding:0 auto;
-    margin:200px auto;
+    margin:300px auto;
     width: 1020px;
     font-family: 'Dosis', sans-serif;
 }
@@ -444,7 +444,7 @@ a{
 }
 /*last-page*/
 .content{
-    margin:200px 100px;
+    margin:300px 100px;
     text-align: center;
     text-shadow: 2px 2px 2px rgba(70, 125, 128, 0.8);
     font-family: KaiTi,STXihei,
@@ -466,7 +466,7 @@ a{
 #cd-timeline {
     position: relative;
     padding: 2em 0;
-    margin: 9em 2em 2em ;
+    margin: 10em 2em 2em ;
 }
 #cd-timeline::before {
     /* this is the vertical line */
