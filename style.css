@@ -466,7 +466,7 @@ a{
 #cd-timeline {
     position: relative;
     padding: 2em 0;
-    margin: 10em 2em 2em ;
+    margin: 14em 2em 2em ;
 }
 #cd-timeline::before {
     /* this is the vertical line */
