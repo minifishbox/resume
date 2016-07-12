@@ -308,6 +308,7 @@ a{
 .basicInfo{
     margin: 200px auto;
     width: 100%;
+    height: 100%;
     font-family: 'Dosis', sans-serif;
     padding: 10px;
 }
@@ -320,8 +321,8 @@ a{
 }
 #basicInfo-1{
     border-right: 5px solid black;
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
     padding-left:300px;
 }
 .title{
@@ -334,17 +335,20 @@ a{
 }
 #basicInfo-2{
     border-left: 5px solid black;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
     padding-left: 40px;
 }
 /* skills*/
-.ca-menu{
-    padding:0;
-    margin-top:200px;
-    margin-bottom: 200px ;
-    margin-left:  135px;
+.ca-skill{
     width: 100%;
+    height: 100%;
+    position: relative;
+}
+.ca-menu{
+    padding:0 auto;
+    margin:200px auto;
+    width: 1020px;
     font-family: 'Dosis', sans-serif;
 }
 .ca-menu li{
@@ -355,7 +359,7 @@ a{
     position: relative;
     float:left;
     background: #fff;
-    margin-right: 20px;
+    margin-left: 10px;
     -webkit-box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
     -moz-box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
     box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
@@ -368,8 +372,8 @@ a{
     -ms-transition: all 400ms linear;
     transition: all 400ms linear;
 }
-.ca-menu li:last-child{
-    margin-right: 0px;
+.ca-menu li:first-child{
+    margin-left: 0px;
 }
 .ca-icon{
     font-family: STXihei,
@@ -438,6 +442,7 @@ a{
 .ca-menu li:hover .ca-sub{
     opacity: 0.8;
 }
+/*last-page*/
 .content{
     margin:200px 100px;
     text-align: center;
